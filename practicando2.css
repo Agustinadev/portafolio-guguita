@@ -119,7 +119,6 @@ p {
   background-color: var(--opacity-color);
 }
 
-.hero-
 /*MENU*/
 
 .menu-btn {
@@ -127,6 +126,7 @@ p {
   border: 0;
   background-color: var(--second-color);
   cursor: pointer;
+  background: none;
 }
 
 .menu-btn img {
@@ -158,11 +158,12 @@ p {
   font-weight: bold;
   text-align: center;
   text-decoration: none;
-  color: var(--four-alpha-color);
+  color: var(--four-color);
+  background-color: var(--second-color);
 }
 
 .menu a:hover {
-  color: var(--white-color);
+  color: var(--four-alpha-color);
   background-color: var(--second-alpha-color);
 }
 
@@ -250,34 +251,6 @@ p {
   }
 }
 
-@media screen and (min-width: 1060px) {
-  .menu-btn {
-    display: none;
-  }
-
-  .menu {
-    position: static;
-    flex-direction: row;
-    width: auto;
-    opacity: 1;
-    pointer-events: auto;
-    background: none;
-  }
-
-  a {
-    margin: 0.5rem;
-  }
-
-  .menu a {
-    padding: 0 1.5rem;
-  }
-
-  .menu a:hover {
-    color: var(--four-color);
-    background: none;
-  }
-}
-
 /*progress*/
 progress {
   width: 100%;
@@ -344,23 +317,6 @@ progress::-webkit-progress-value {
   text-align: right;
 }
 
-@media screen and (min-width: 1060px) {
-  .text-lg-center {
-    text-align: center;
-  }
-  .text-lg-left {
-    text-align: left;
-  }
-  .text-lg-right {
-    text-align: right;
-  }
-
-  .full-lg-screen {
-    width: 100%;
-    min-height: 100vh;
-  }
-}
-
 /*site styles*/
 
 .header {
@@ -370,9 +326,15 @@ progress::-webkit-progress-value {
   z-index: 999;
   width: 100%;
   height: var(--header-height);
-  background: var(--first-color);
   padding: 1rem;
   font-family: "Mystery Quest", cursive;
+  background: rgb(69, 4, 112);
+  background: linear-gradient(
+    90deg,
+    rgba(69, 4, 112, 1) 0%,
+    rgba(31, 37, 112, 1) 50%,
+    rgba(1, 1, 0, 1) 100%
+  );
 }
 
 .header > .container {
@@ -390,52 +352,6 @@ progress::-webkit-progress-value {
 .imagen-de-habilidades {
   display: flex;
   justify-content: center;
-}
-
-@media screen and (min-width: 768px) {
-  .services > .container {
-    display: grid;
-    grid-template-columns: repeat(2, 45%);
-    justify-content: space-between;
-    align-content: center;
-  }
-
-  .services .title-servicios {
-    grid-column: span 2;
-  }
-}
-
-@media screen and (min-width: 1060px) {
-  .about {
-    display: grid;
-    grid-template-columns: repeat(3, 30%);
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .imagen-de-habilidades {
-    height: 200px;
-  }
-
-  .header {
-    position: fixed;
-    top: 0;
-    padding: 0.5rem;
-    background: rgb(76, 0, 122);
-    background: linear-gradient(
-      90deg,
-      rgba(76, 0, 122, 1) 0%,
-      rgba(48, 5, 79, 1) 11%,
-      rgba(23, 0, 65, 1) 18%,
-      rgba(40, 21, 73, 1) 28%,
-      rgba(73, 34, 117, 1) 62%,
-      rgba(65, 27, 105, 1) 66%,
-      rgba(59, 23, 96, 1) 68%,
-      rgba(34, 12, 74, 1) 74%,
-      rgba(34, 9, 75, 1) 86%,
-      rgba(13, 0, 33, 1) 100%
-    );
-  }
 }
 
 /*SERVICES*/
@@ -531,33 +447,6 @@ progress::-webkit-progress-value {
 .portfolio-info {
   margin-left: 10px;
   align-self: center;
-}
-
-@media screen and (min-width: 768px) {
-  .portfolio > .container {
-    display: grid;
-    grid-template-columns: repeat(2, 45%);
-  }
-
-  .portfolio .title-servicios {
-    grid-column: span 2;
-  }
-
-  .portfolio-modal {
-    flex-direction: row;
-    max-width: 800px;
-  }
-}
-
-@media screen and (min-width: 1060px) {
-  .portfolio > .container {
-    display: grid;
-    grid-template-columns: repeat(3, 30%);
-  }
-
-  .portfolio .title-servicios {
-    grid-column: span 3;
-  }
 }
 
 /*MODAL*/
@@ -790,6 +679,46 @@ progress::-webkit-progress-value {
   fill: var(--svg-color);
 }
 
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--five-color);
+  color: var(--white-color);
+  margin-bottom: var(--header-height);
+}
+
+/*MEDIA QUERIES TABLET*/
+@media screen and (min-width: 768px) {
+  .services > .container {
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+    justify-content: space-between;
+    align-content: center;
+  }
+
+  .services .title-servicios {
+    grid-column: span 2;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .portfolio > .container {
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+  }
+
+  .portfolio .title-servicios {
+    grid-column: span 2;
+  }
+
+  .portfolio-modal {
+    flex-direction: row;
+    max-width: 800px;
+  }
+}
+
+/*MEDIAS QUERIES DESKTOP*/
+
 @media screen and (min-width: 1060px) {
   .contact-form {
     display: grid;
@@ -807,16 +736,97 @@ progress::-webkit-progress-value {
   }
 }
 
-.footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: var(--five-color);
-  color: var(--white-color);
-  margin-bottom: var(--header-height);
-}
-
 @media screen and (min-width: 1060px) {
   .footer {
     margin-bottom: 0px;
+  }
+}
+
+@media screen and (min-width: 1060px) {
+  .menu-btn {
+    display: none;
+  }
+
+  .menu {
+    position: static;
+    flex-direction: row;
+    width: auto;
+    opacity: 1;
+    pointer-events: auto;
+    background: none;
+  }
+
+  a {
+    margin: 0.5rem;
+  }
+
+  .menu a {
+    padding: 0 1.5rem;
+    background: none;
+  }
+
+  .menu a:hover {
+    color: var(--four-alpha-color);
+    background: none;
+  }
+}
+@media screen and (min-width: 1060px) {
+  .text-lg-center {
+    text-align: center;
+  }
+  .text-lg-left {
+    text-align: left;
+  }
+  .text-lg-right {
+    text-align: right;
+  }
+
+  .full-lg-screen {
+    width: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media screen and (min-width: 1060px) {
+  .about {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .imagen-de-habilidades {
+    height: 200px;
+  }
+
+  .header {
+    position: fixed;
+    top: 0;
+    padding: 0.5rem;
+    background: rgb(76, 0, 122);
+    background: linear-gradient(
+      90deg,
+      rgba(76, 0, 122, 1) 0%,
+      rgba(48, 5, 79, 1) 11%,
+      rgba(23, 0, 65, 1) 18%,
+      rgba(40, 21, 73, 1) 28%,
+      rgba(73, 34, 117, 1) 62%,
+      rgba(65, 27, 105, 1) 66%,
+      rgba(59, 23, 96, 1) 68%,
+      rgba(34, 12, 74, 1) 74%,
+      rgba(34, 9, 75, 1) 86%,
+      rgba(13, 0, 33, 1) 100%
+    );
+  }
+}
+
+@media screen and (min-width: 1060px) {
+  .portfolio > .container {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+  }
+
+  .portfolio .title-servicios {
+    grid-column: span 3;
   }
 }
